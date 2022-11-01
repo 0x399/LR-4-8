@@ -4,21 +4,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 public class Tulip extends Flowers{
-
-    public String name = "Tulip";
-    public double stem_len = 12.00;
-    private Double price = 50.00;
-    public static Color color = Color.red;
-    public static Date ArrivalDate;
-
-    static {
-        try {
-            ArrivalDate = sdf.parse("14.10.2022");
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
+    public static Color color;
     public static Integer Quantity = 300;
 
     public Tulip(String name, double stem_len, double price, Color color, String date) throws ParseException {
@@ -29,20 +15,9 @@ public class Tulip extends Flowers{
         super();
         this.name = "Tulip";
         this.stem_len = 12.00;
-        this.price = 50.00;
+        this.setPrice(50.00);
         this.color = Color.red;
-        this.ArrivalDate = sdf.parse("14.10.2022");
-        this.Quantity = 300;
-    }
-
-    @Override
-    public Double getPrice() {
-        return price;
-    }
-
-    @Override
-    public void setPrice(Double price) {
-        this.price = price;
+        this.ArrivalDate = sdf.parse("19.10.2022");
     }
 
     @Override
@@ -50,7 +25,7 @@ public class Tulip extends Flowers{
         return "Tulip{" +
                 "name='" + name + '\'' +
                 ", stem_len=" + stem_len +
-                ", price=" + price +
+                ", price=" + getPrice() +
                 ", color=" + color +
                 ", ArrivalDate=" + ArrivalDate +
                 ", Quantity=" + Quantity +

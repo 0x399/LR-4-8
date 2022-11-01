@@ -1,5 +1,6 @@
 package Command;
 
+import java.text.ParseException;
 import java.util.HashMap;
 
 public class Switch {
@@ -9,7 +10,7 @@ public class Switch {
         commandMap.put(commandName, command);
     }
 
-    public void execute(String commandName) {
+    public void execute(String commandName) throws ParseException {
         Command command = commandMap.get(commandName);
         if (command == null) {
             throw new IllegalStateException("no command registered for " + commandName);

@@ -2,10 +2,11 @@ package Flowers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Scanner;
 
-public abstract class Flowers implements Comparable <Flowers>{
+public abstract class Flowers implements Comparable<Flowers>{
     Scanner sc = new Scanner(System.in);
     static Scanner sc2 = new Scanner(System.in);
     static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
@@ -120,15 +121,12 @@ public abstract class Flowers implements Comparable <Flowers>{
         }
     }
 
-@Override
-public int compareTo(Flowers fl){
-      double result = this.stem_len - fl.stem_len;
-      if(result > 0) return 1;
-      if(result == 0) return 0;
-      if(result < 0) return -1;
-      return 0;
-}
-
+    @Override
+    public int compareTo(Flowers fl){
+        this.stem_len = this.stem_len;
+        fl.stem_len = fl.stem_len;
+        return this.stem_len.compareTo(fl.stem_len);
+    }
     @Override
     public String toString() {
         return name + ":" +

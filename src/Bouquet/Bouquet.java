@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import Decorations.Decorations;
@@ -67,15 +68,25 @@ public class Bouquet{
      return (TotalPrice);
     }
 
-
     public void FindShortestStem(){
-        Collections.sort(this.flowersArr);
-        int i = 0;
+        Comparator<Flowers> comparator = Comparator.comparing(obj -> obj.stem_len);
+        Collections.sort(flowersArr, comparator);
+        int k = 0;
         do{
-            System.out.println(this.flowersArr.get(i));
-            i++;
-        }while (this.flowersArr.get(i).stem_len == this.flowersArr.get(i+1).stem_len);
+            System.out.println(this.flowersArr.get(k));
+            k++;
+        }while (this.flowersArr.get(k).stem_len == this.flowersArr.get(k+1).stem_len);
          }
+
+    public void FindFreshest(){
+        Comparator<Flowers> comparator2 = Comparator.comparing(obj -> obj.ArrivalDate);
+        Collections.sort(flowersArr, comparator2);
+        int k = 0;
+        do{
+            System.out.println(this.flowersArr.get(k));
+            k++;
+        }while (this.flowersArr.get(k).ArrivalDate == this.flowersArr.get(k+1).ArrivalDate);
+    }
 
      public void ChooseFlower() throws ParseException {
          System.out.println("1 - to add rose, 2 - to add tulip, 3 - to add chrysanthemum, 4 - to go back");

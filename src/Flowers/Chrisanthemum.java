@@ -6,19 +6,7 @@ import java.util.Scanner;
 
 public class Chrisanthemum extends Flowers{
 
-    public String name = "Chrisanthemum";
-    public Double stem_len = 15.00;
-    private Double price = 55.00;
     public static Color color = Color.white;
-    public static Date ArrivalDate;
-
-    static {
-        try {
-            ArrivalDate = sdf.parse("16.10.2022");
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static Integer Quantity = 250;
 
@@ -26,16 +14,12 @@ public class Chrisanthemum extends Flowers{
         super(name, stem_len, price, color, date);
     }
 
-    public Chrisanthemum() {
+    public Chrisanthemum() throws ParseException {
         this.name = "Chrisanthemum";
         this.stem_len = 15.00;
-        this.price = 55.00;
+        this.setPrice(55.00);
         this.color = Color.white;
-    }
-
-    @Override
-    public Double getPrice() {
-        return price;
+        this.ArrivalDate = sdf.parse("16.10.2022");
     }
 
     public void ChangeStem() {
@@ -102,10 +86,11 @@ public class Chrisanthemum extends Flowers{
         return "Chrisanthemum{" +
                 "name='" + name + '\'' +
                 ", stem_len=" + stem_len +
-                ", price=" + price +
+                ", price=" + getPrice() +
                 ", color=" + color +
                 ", ArrivalDate=" + ArrivalDate +
                 ", Quantity=" + Quantity +
                 '}';
     }
+
 }

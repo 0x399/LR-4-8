@@ -34,26 +34,64 @@ public class Warehouse {
 
     public static void display() throws ParseException {
         System.out.println("Roses:");
+        Rose r1 = new Rose();
         System.out.println("Quantity:");
         System.out.println(Rose.Quantity);
         System.out.println("Color:");
         System.out.println(Rose.color);
         System.out.println("Delivered on:");
-        System.out.println(Rose.ArrivalDate);
+        System.out.println(r1.ArrivalDate);
+        System.out.println("Price:");
+        System.out.println(r1.getPrice());
         System.out.println("Tulips:");
+        Tulip t1 = new Tulip();
         System.out.println("Quantity:");
         System.out.println(Tulip.Quantity);
         System.out.println("Color:");
         System.out.println(Tulip.color);
         System.out.println("Delivered on:");
-        System.out.println(Tulip.ArrivalDate);
+        System.out.println(t1.ArrivalDate);
+        System.out.println("Price:");
+        System.out.println(t1.getPrice());
         System.out.println("Chrysanthemums:");
+        Chrisanthemum c1 = new Chrisanthemum();
         System.out.println("Quantity:");
         System.out.println(Chrisanthemum.Quantity);
         System.out.println("Color:");
         System.out.println(Chrisanthemum.color);
         System.out.println("Delivered on:");
-        System.out.println(Chrisanthemum.ArrivalDate);
+        System.out.println(c1.ArrivalDate);
+        System.out.println("Price:");
+        System.out.println(c1.getPrice());
+        Menu menu = new Menu();
+        menu.menu();
+    }
+
+    public void display2() throws ParseException {
+        System.out.println("Roses:");
+        Rose r1 = new Rose();
+        System.out.println("Quantity:");
+        System.out.println(Rose.Quantity);
+        System.out.println("Color:");
+        System.out.println(Rose.color);
+        System.out.println("Delivered on:");
+        System.out.println(r1.ArrivalDate);
+        System.out.println("Tulips:");
+        Tulip t1 = new Tulip();
+        System.out.println("Quantity:");
+        System.out.println(Tulip.Quantity);
+        System.out.println("Color:");
+        System.out.println(Tulip.color);
+        System.out.println("Delivered on:");
+        System.out.println(t1.ArrivalDate);
+        System.out.println("Chrysanthemums:");
+        Chrisanthemum c1 = new Chrisanthemum();
+        System.out.println("Quantity:");
+        System.out.println(Chrisanthemum.Quantity);
+        System.out.println("Color:");
+        System.out.println(Chrisanthemum.color);
+        System.out.println("Delivered on:");
+        System.out.println(c1.ArrivalDate);
         Menu menu = new Menu();
         menu.menu();
     }

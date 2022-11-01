@@ -4,36 +4,20 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Rose extends Flowers implements Comparable<Flowers>{
-    public String name = "Rose";
-    public Double stem_len = 15.00;
-    private Double price = 75.00;
-    public static Color color = Color.red;
-    public static Date ArrivalDate;
-
-    static {
-        try {
-            ArrivalDate = sdf.parse("14.10.2022");
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
+public class Rose extends Flowers{
+    public static Color color;
     public static Integer Quantity = 150;
 
     public Rose(String name, double stem_len, double price, Color color, String date) throws ParseException {
         super(name, stem_len, price, color, date);
     }
 
-    public Rose() {
+    public Rose() throws ParseException {
         this.name = "Rose";
         this.stem_len = 15.00;
-        this.price = 75.00;
-    }
-
-    @Override
-    public Double getPrice() {
-        return price;
+        this.setPrice(75.00);
+        this.color = Color.white;
+        this.ArrivalDate = sdf.parse("14.10.2022");
     }
 
     public void ChangeStem() {
@@ -106,7 +90,7 @@ public class Rose extends Flowers implements Comparable<Flowers>{
         return "Rose{" +
                 "name='" + name + '\'' +
                 ", stem_len=" + stem_len +
-                ", price=" + price +
+                ", price=" + getPrice() +
                 ", color=" + color +
                 ", ArrivalDate=" + ArrivalDate +
                 ", Quantity=" + Quantity +

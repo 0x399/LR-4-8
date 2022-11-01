@@ -1,6 +1,9 @@
 package Command;
+
+import java.text.ParseException;
+
 @FunctionalInterface
 
 public interface Command {
-    void execute();
+    void execute() throws ParseException;
 }
